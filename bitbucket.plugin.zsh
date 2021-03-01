@@ -108,11 +108,10 @@ EOF
 function _bitbucket::init {
   if [ -n "${BITBUCKET_SECRET}" ] && [ -n "${BITBUCKET_KEY}" ]; then
     echo "============================================="
-    echo "Create a new OAuth Consumer"
+    echo "Current OAuth Consumer"
     echo "BITBUCKET_KEY ..... ${BITBUCKET_KEY}"
     echo "BITBUCKET_SECRET .. ${BITBUCKET_SECRET}"
     echo "============================================="
-    open "https://bitbucket.org/${USER}/workspace/settings/api"
   else
     echo "============================================="
     echo "Create a new OAuth Consumer"
