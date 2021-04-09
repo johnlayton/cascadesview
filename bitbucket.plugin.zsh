@@ -7,10 +7,7 @@ export BITBUCKET_API_ENDPOINT="https://api.bitbucket.org/2.0"
 function bitbucket-token () {
   local KEY=${1:-$BITBUCKET_KEY}
   local SECRET=${2:-$BITBUCKET_SECRET}
-#    --verbose \
-#    --insecure \
-#    --verbose \
-#    --insecure \
+
   curl \
     --user "$KEY:$SECRET" \
     --request POST \
@@ -44,8 +41,6 @@ function bitbucket-get () {
   if [[ -n "${2}" ]]; then
     QRY="?${2}"
   fi
-
-#  echo "curl --request GET --silent --header 'Accept: application/json' --header \"Authorization: Bearer $( bitbucket-token )\"  \"${BITBUCKET_API_ENDPOINT}${PTH}${QRY}\""
 
   curl --request GET \
        --silent \
