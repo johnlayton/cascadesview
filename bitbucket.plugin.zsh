@@ -5,11 +5,11 @@
 export BITBUCKET_API_ENDPOINT="https://api.bitbucket.org/2.0"
 
 function bitbucket-token () {
-  local KEY=${1:-$BITBUCKET_KEY}
-  local SECRET=${2:-$BITBUCKET_SECRET}
+  local KEY=${1:-"${BITBUCKET_KEY}"}
+  local SECRET=${2:-"${BITBUCKET_SECRET}"}
 
   curl \
-    --user "$KEY:$SECRET" \
+    --user "${KEY}:${SECRET}" \
     --request POST \
     --url "https://bitbucket.org/site/oauth2/access_token" \
     --data "grant_type=client_credentials" \
